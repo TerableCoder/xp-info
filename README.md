@@ -6,8 +6,14 @@ Show XP/Hour and other details
 - Output XP information
 ### `xp [on/off]`
 - Enable/disable module
-### `xp [reset]`
+### `xp [r/res/reset/restart]`
 - Reset current session's progress
+### `xp [sm/showmessage]`
+- Toggle Show Message
+### `xp [su/shortunits]`
+- Toggle Short Units
+### `xp [cs/commaseparators]`
+- Toggle Comma Separators
 
 ## Config
 ```

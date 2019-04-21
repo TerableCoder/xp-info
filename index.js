@@ -49,6 +49,8 @@ module.exports = function XpInfo(mod) {
     mod.command.add(['xp', 'xpinfo'], (arg) => {
         if (arg) arg = arg.toLowerCase();
         switch(arg) {
+            case "r":
+            case "res":
             case "reset":
             case "restart":
                 resetMod();
@@ -64,6 +66,24 @@ module.exports = function XpInfo(mod) {
                 mod.settings.enabled = false;
                 mod.command.message("Disabled".clr('E69F00'));
                 return;
+			case "sm":
+			case "showmessage":
+				mod.settings.showMessage = !mod.settings.showMessage;
+				if(mod.settings.showMessage) mod.command.message("Show Message Enabled".clr('56B4E9'));
+				else mod.command.message("Show Message Disabled".clr('E69F00'));
+				return;
+			case "su":
+			case "shortunits":
+				mod.settings.shortUnits = !mod.settings.shortUnits;
+				if(mod.settings.shortUnits) mod.command.message("Short Units Enabled".clr('56B4E9'));
+				else mod.command.message("Short Units Disabled".clr('E69F00'));
+				return;
+			case "cs":
+			case "commaseparators":
+				mod.settings.commaSeparators = !mod.settings.commaSeparators;
+				if(mod.settings.commaSeparators) mod.command.message("Comma Separators Enabled".clr('56B4E9'));
+				else mod.command.message("Comma Separators Disabled".clr('E69F00'));
+				return;
         }
         
         mod.command.message("XP/Hour: ".clr("FDD017") + formatXp(xpPerHour()).toString().clr("00FFFF"));
